@@ -43,7 +43,7 @@ app.post('/auth/login', loginValidator, handleValidationErrors, login);
 app.post('/auth/register', registerValidator, handleValidationErrors, register);
 app.get('/auth/me', checkAuth, getMe);
 app.post('/posts', checkAuth, postCreateValidation, create);
-app.post('/comment', checkAuth, createComment);
+app.post('/posts/:id', checkAuth, createComment);
 app.get('/posts/tags', getLastTags);
 app.get('/posts/new', getNewPosts);
 app.get('/posts/popular', getPopularPosts);
